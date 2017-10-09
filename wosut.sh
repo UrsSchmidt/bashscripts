@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Wosut -- Which operating system used this?
+# wosut -- Which operating system used this?
 #
 # @author Urs Schmidt
 

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# pull -- recursively updates git and svn repositories
+# pull -- Recursively updates git and svn repositories.
 #
 # @author Urs Schmidt
 
