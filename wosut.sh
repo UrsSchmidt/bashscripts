@@ -5,7 +5,7 @@
 # @author Urs Schmidt
 
 source='.'
-if [ "$1" != '' ]; then
+if [[ "$1" != '' ]]; then
     source="$1"
 fi
 
@@ -18,14 +18,11 @@ function handledir {
            || "$name" == 'default-capability.xml' \
            || "$name" == 'LOST.DIR' ]]; then
             android=true
-        elif [[ "$name" == '.DS_Store' \
-             || "$name" == '._.DS_Store' \
+        elif [[ "$name" == '.DS_Store' || "$name" == '._.DS_Store' \
              || "$name" == '__MACOSX' \
              || "$name" == '.Spotlight-V100' \
-             || "$name" == '.TemporaryItems' \
-             || "$name" == '._.TemporaryItems' \
-             || "$name" == '.Trashes' \
-             || "$name" == '._.Trashes' \
+             || "$name" == '.TemporaryItems' || "$name" == '._.TemporaryItems' \
+             || "$name" == '.Trashes' || "$name" == '._.Trashes' \
              || "$name" == '.fseventsd' ]]; then
             macintosh=true
         elif [[ "$name" == '.Trash-'* \
@@ -38,13 +35,13 @@ function handledir {
              || "$namelc" == 'thumbs.db' ]]; then
             windows=true
         fi
-        if [ -d "$file" ]; then
+        if [[ -d "$file" ]]; then
             handledir "$file"
         fi
     done
 }
 
-if [ -d "$source" ]; then
+if [[ -d "$source" ]]; then
     android=false
     macintosh=false
     ubuntu=false

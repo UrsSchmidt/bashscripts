@@ -5,13 +5,13 @@
 # @author Urs Schmidt
 
 source='.'
-if [ "$1" != '' ]; then
+if [[ "$1" != '' ]]; then
     source="$1"
 fi
 
-if [ -d "$source" ]; then
+if [[ -d "$source" ]]; then
     regex1='(((even more)|(lots of)|more|some) )?((minor|small) )?(coding-style )?(changes|(fix(es)?))( in the documentation)?'
-    regex2='((adjust(ed)?)|(enhance(d)?)|(fix(ed)?)|(update(d)?)) (((some )?comment(s)?)|documentation|(readme(\.[a-z]+)?)|((some )?typos))'
+    regex2='((add(ed)?)|(adjust(ed)?)|(enhance(d)?)|(fix(ed)?)|(update(d)?)) (((some )?comment(s)?)|documentation|(readme(\.[a-z]+)?)|((some )?typos))'
     regex3='((even )?more )?clean-up'
     regex4='hot-fix(es)?'
 
