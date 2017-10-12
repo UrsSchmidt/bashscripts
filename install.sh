@@ -1,8 +1,13 @@
 #!/bin/bash
 
-if [ -d '/usr/local/bin/' ]; then
-    cp 'logfilter.sh' '/usr/local/bin/logfilter'
-    cp 'pull.sh' '/usr/local/bin/pull'
-    cp 'unwindows.sh' '/usr/local/bin/unwindows'
-    cp 'wosut.sh' '/usr/local/bin/wosut'
+path='/usr/local/bin'
+
+if [ -d "$path" ]; then
+    cp 'ascii.sh' "$path/ascii"
+    cp 'logfilter.sh' "$path/logfilter"
+    cp 'pull.sh' "$path/pull"
+    cp 'unwindows.sh' "$path/unwindows"
+    cp 'wosut.sh' "$path/wosut"
+else
+    echo "Error: $path is not a directory"
 fi

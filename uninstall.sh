@@ -1,17 +1,27 @@
 #!/bin/bash
 
-if [ -f '/usr/local/bin/logfilter' ]; then
-    rm '/usr/local/bin/logfilter'
+path='/usr/local/bin'
+
+if [ ! -d "$path" ]; then
+    echo "Error: $path is not a directory"
 fi
 
-if [ -f '/usr/local/bin/pull' ]; then
-    rm '/usr/local/bin/pull'
+if [ -f "$path/ascii" ]; then
+    rm "$path/ascii"
 fi
 
-if [ -f '/usr/local/bin/unwindows' ]; then
-    rm '/usr/local/bin/unwindows'
+if [ -f "$path/logfilter" ]; then
+    rm "$path/logfilter"
 fi
 
-if [ -f '/usr/local/bin/wosut' ]; then
-    rm '/usr/local/bin/wosut'
+if [ -f "$path/pull" ]; then
+    rm "$path/pull"
+fi
+
+if [ -f "$path/unwindows" ]; then
+    rm "$path/unwindows"
+fi
+
+if [ -f "$path/wosut" ]; then
+    rm "$path/wosut"
 fi
