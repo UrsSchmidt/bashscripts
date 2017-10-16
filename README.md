@@ -6,7 +6,7 @@ Contains the following scripts:
  - ascii (Prints a small ASCII table.)
  - logfilter (Shows an automatically filtered git log.)
  - pull (Recursively updates git and svn repositories.)
- - unwindows (Updates permissions of files.)
+ - unwindows (Updates file permissions.)
  - wosut (Which operating system used this?)
 
 Wosut.java is a Java implementation of wosut.sh.

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# unwindows -- Updates permissions of files.
+# unwindows -- Updates file permissions.
 # Use this script on files copied from FAT/NTFS USB flash drives.
 #
 # @author Urs Schmidt
