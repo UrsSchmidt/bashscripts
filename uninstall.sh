@@ -10,6 +10,10 @@ if [ -f "$path/ascii" ]; then
     rm "$path/ascii"
 fi
 
+if [ -f "$path/distribution" ]; then
+    rm "$path/distribution"
+fi
+
 if [ -f "$path/logfilter" ]; then
     rm "$path/logfilter"
 fi
