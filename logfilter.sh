@@ -10,6 +10,8 @@ if [[ "$1" != '' ]]; then
 fi
 
 if [[ -d "$source" ]]; then
+    export LC_ALL=C
+
     regex1='(((even more)|(lots of)|more|some) )?((minor|small) )?(coding-style )?(changes|(fix(es)?))( in the documentation)?'
     regex2='((add(ed)?)|(adjust(ed)?)|(enhance(d)?)|(fix(ed)?)|(update(d)?)) (((some )?comment(s)?)|documentation|(readme(\.[a-z]+)?)|((some )?typos))'
     regex3='((even )?more )?clean-up'
