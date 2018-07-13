@@ -5,15 +5,27 @@
 #
 # @author Urs Schmidt
 #
+# 2018-07-13 Make the source directory a parameter
 # 2017-09-11 Now ignoring directories starting in a dot
 #            Now ignoring files not containing a dot
 # 2017-08-19 Initial version
 
-# all files and directories
-find .                                       -not -path "*/.*/*" -exec chmod -c o-w {} \;
+source='.'
+if [[ "$1" != '' ]]; then
+    source="$1"
+fi
 
-# all files named *.* and not *.sh
-find . -type f -name "*.*" -not -name "*.sh" -not -path "*/.*/*" -exec chmod -c a-x {} \;
+if [[ -d "$source" ]]; then
 
-# all files named *.sh
-find . -type f                  -name "*.sh" -not -path "*/.*/*" -exec chmod -c a+x {} \;
+    # all files and directories
+    find "$source"                                       -not -path "*/.*/*" -exec chmod -c o-w {} \;
+
+    # all files named *.* and not *.sh
+    find "$source" -type f -name "*.*" -not -name "*.sh" -not -path "*/.*/*" -exec chmod -c a-x {} \;
+
+    # all files named *.sh
+    find "$source" -type f                  -name "*.sh" -not -path "*/.*/*" -exec chmod -c a+x {} \;
+
+else
+    echo "Error: $source is not a directory"
+fi
