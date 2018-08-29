@@ -1,10 +1,12 @@
 #!/bin/bash
 
 # unwindows -- Updates file permissions.
-# Use this script on files copied from FAT/NTFS USB flash drives.
+# Use this script on directories copied from FAT/NTFS USB flash drives.
 #
 # @author Urs Schmidt
 #
+# 2018-08-29 Now handling .desktop files as well
+#            Now case-insensitive
 # 2018-07-13 Make the source directory a parameter
 # 2017-09-11 Now ignoring directories starting in a dot
 #            Now ignoring files not containing a dot
@@ -18,13 +20,18 @@ fi
 if [[ -d "$source" ]]; then
 
     # all files and directories
-    find "$source"                                       -not -path "*/.*/*" -exec chmod -c o-w {} \;
+    find "$source" \
+        -not -path '*/.*/*' -exec chmod -c 'o-w' {} \;
 
-    # all files named *.* and not *.sh
-    find "$source" -type f -name "*.*" -not -name "*.sh" -not -path "*/.*/*" -exec chmod -c a-x {} \;
+    # all files named *.* and not (*.desktop or *.sh)
+    find "$source" \
+        -type f \( -iname '*.*' -a -not \( -iname '*.desktop' -o -iname '*.sh' \) \) \
+        -not -path '*/.*/*' -exec chmod -c 'a-x' {} \;
 
-    # all files named *.sh
-    find "$source" -type f                  -name "*.sh" -not -path "*/.*/*" -exec chmod -c a+x {} \;
+    # all files named *.desktop or *.sh
+    find "$source" \
+        -type f \( -iname '*.desktop' -o -iname '*.sh' \) \
+        -not -path '*/.*/*' -exec chmod -c 'a+x' {} \;
 
 else
     echo "Error: $source is not a directory"
