@@ -1,4 +1,4 @@
-# Useful bash scripts
+# bashscripts
 
 A collection of useful bash scripts.
 
