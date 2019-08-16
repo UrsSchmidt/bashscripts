@@ -20,7 +20,7 @@ fi
 verbose='true'
 
 # https://stackoverflow.com/a/8574392
-function containsElement {
+containsElement() {
     local e match="$1"
     shift
     for e; do [[ "$e" == "$match" ]] && return 0; done
@@ -29,7 +29,7 @@ function containsElement {
 
 appliedPatches=()
 
-function applyPatch {
+applyPatch() {
     local project="${1%/}/"
     local patch="${2%/}/"
     local required="$3"
