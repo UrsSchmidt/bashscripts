@@ -5,7 +5,7 @@
 #
 # @author Urs Schmidt
 #
-# 2019-08-16 Added g+w for all files and directories
+# 2019-08-16 Added a+r,u+w,g+w for all files and directories
 # 2018-08-29 Now handling .desktop files as well
 #            Now case-insensitive
 # 2018-07-13 Make the source directory a parameter
@@ -22,7 +22,7 @@ if [[ -d "$source" ]]; then
 
     # all files and directories
     find "$source" \
-        -not -path '*/.*/*' -exec chmod -c 'g+w,o-w' {} \;
+        -not -path '*/.*/*' -exec chmod -c 'a+r,u+w,g+w,o-w' {} \;
 
     # all files named *.* and not (*.desktop or *.sh)
     find "$source" \
