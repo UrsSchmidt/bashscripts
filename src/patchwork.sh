@@ -6,16 +6,16 @@
 
 if [[ "$#" -ne 2 && "$#" -ne 3 ]]
 then
-    echo 'Usage: patchwork <project> <patch> [<performCommit>]'
+    echo 'Usage: patchwork <project> <patch> [<performCommits>]'
     exit 1
 fi
 
 rootProject="$1"
 rootPatch="$2"
-performCommit='true'
+performCommits='true'
 if [[ "$#" -eq 3 ]]
 then
-    performCommit="$3"
+    performCommits="$3"
 fi
 verbose='true'
 
@@ -67,7 +67,7 @@ applyPatch() {
                 then
                     echo "[GIT] $patchFile"
                     git -C "$project" apply "$(pwd)/$patchFile"
-                    if [[ "$performCommit" == 'true' ]]
+                    if [[ "$performCommits" == 'true' ]]
                     then
                         git -C "$project" add -A
                         git -C "$project" commit -m "$title" -q
