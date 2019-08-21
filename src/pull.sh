@@ -9,7 +9,7 @@ if [[ "$1" != '' ]]; then
     source="$1"
 fi
 
-function handledir {
+handledir() {
     dir="$1"
     if [[ -d "$dir/.git" ]]; then
         echo "$(basename $dir)"

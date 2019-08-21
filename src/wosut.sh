@@ -9,7 +9,7 @@ if [[ "$1" != '' ]]; then
     source="$1"
 fi
 
-function handledir {
+handledir() {
     dir="$1"
     for file in "$dir/"*; do
         name=$(basename "$file")
