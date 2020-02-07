@@ -9,6 +9,7 @@ Contains the following scripts:
  - mac (music archive checker; Checks my music archive for inconsistencies.)
  - patchwork (Automatically applies git patches to a directory.)
  - pull (Recursively updates git and svn repositories.)
+ - shrnd (Show random; open a random image or video in either eye-of-gnome or vlc.)
  - unwindows (Updates file permissions.)
  - wosut (Which operating system used this?)
 
