@@ -19,7 +19,7 @@ find . -type f \( -iname '*.flv' -o -iname '*.gif' -o -iname '*.jpg' -o -iname '
         if [[ "$length" != '' ]]; then
             length=$(printf "%.0f\n" "$length")
             random=$(shuf -i 0-"$length" -n 1)
-            vlc --no-loop --play-and-exit -q --start-time="$random" "$file" > /dev/null 2>&1
+            vlc -f --no-loop --play-and-exit -q --start-time="$random" "$file"
         else
             echo "Error: no length <$file>"
         fi
