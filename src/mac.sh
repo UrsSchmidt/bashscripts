@@ -21,7 +21,7 @@ if [[ -d "$source" ]]; then
         | grep -Ev '^\./.*/.*/.*\.m4a$' \
         | grep -Ev '^\./.*/.*/.*\.mp3$' \
         | grep -Ev '^\./.*/.*/.*\.webm$' \
-        | grep -Ev '^\./Stub.jpg$' \
+        | grep -Ev '^\./stub.jpg$' \
         | sed 's/$/__This file path does not match any given pattern./' >> "$tmpfile"
 
     find . -mindepth 2 -maxdepth 2 -type d '!' -exec sh -c 'ls -1 "{}" | grep -Eq "^.*\.(flac|m4a|mp3|webm)$"' ';' -print \
